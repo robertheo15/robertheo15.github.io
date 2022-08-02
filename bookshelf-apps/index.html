@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Aplikasi Rak Buku</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+<header class="head_bar">
+  <h1 class="head_bar__title">Aplikasi Rak Buku</h1>
+</header>
+
+<div class="row m-3">
+  <div id="alert"></div>
+  <div class="col-md-4 p-3">
+    <div class="card" >
+      <div class="card-body">
+        <form action="" id="inputBook">
+          <div class="mb-3">
+            <label for="inputBookTitle" class="form-label">Judul</label>
+            <input type="text" class="form-control" id="inputBookTitle" required>
+          </div>
+          <div class="mb-3">
+            <label for="inputBookAuthor" class="form-label">Penulis</label>
+            <input type="text" class="form-control" id="inputBookAuthor" required>
+          </div>
+          <div class="mb-3">
+            <label for="inputBookYear" class="form-label">Tahun terbit</label>
+            <input type="number" class="form-control" id="inputBookYear" required>
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="isComplete">
+            <label class="form-check-label" for="isComplete">
+              Sudah dibaca
+            </label>
+          </div>
+          <input type="submit" value="Masukkan Buku ke rak" name="Submit" class="btn btn-primary btn-sm">
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8 p-3">
+    <div class="card mb-3" >
+      <div class="card-body">
+        <h5 class="card-title text-center">Cari Buku (Opsional)</h5>
+        <form action="" id="searchBook">
+          <div class="mb-3">
+            <label for="searchBookTitle" class="form-label">Judul</label>
+            <input type="text" class="form-control" id="searchBookTitle">
+          </div>
+          <button type="submit" class="btn btn-primary btn-sm" id="searchSubmit">Cari!</button>
+          <button type="button" class="btn btn-dark btn-sm" id="reset" onclick="window.location.reload();">Reset!</button>
+        </form>   
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card mb-3" >
+          <div class="card-body">
+            <h5 class="card-title text-center">Belum selesai dibaca</h5>
+            <div class="row">
+              <div class="col-md-12">
+                <div id="isNotComplete"></div>                             
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="col-sm-6">
+          <div class="card" >
+            <div class="card-body">
+              <h5 class="card-title text-center">Selesai dibaca</h5>
+              <div class="row">
+                <div class="col-md-12">
+                  <div id="completedBookList"></div>                
+                </div>
+              </div>
+          </div>
+      </div>  
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
